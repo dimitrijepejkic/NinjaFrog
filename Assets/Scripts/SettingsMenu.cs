@@ -1,11 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
-using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class SettingMenu : MonoBehaviour
 {
@@ -13,7 +8,7 @@ public class SettingMenu : MonoBehaviour
 
     [SerializeField] TMPro.TMP_Dropdown resolutionDropdown;
 
-    public AudioSource audioSource;
+ 
     
     Resolution[] resolutions;
 
@@ -43,17 +38,6 @@ public class SettingMenu : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (PauseMenu.GameIsPaused)
-        {
-            audioMixer.SetFloat("volume", 0f);
-        }
-        if (!PauseMenu.GameIsPaused)
-        {
-            SetVolume(0f);
-        }
-    }
 
     public void SetVolume(float volume)
     {
